@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="form-group">
+      <form #formCtrl>
+
+        <label for="username">Username</label>
+        <input
+          class="form-control" 
+          type="text" 
+          id="username" 
+          placeholder="Default"
+          [(ngModel)]="currentUsername"
+          [ngModelOptions]="{standalone: true}"
+          >
+        <label for="question">Ask a question!</label>
+        <textarea 
+          name="question-input"
+          class="form-control" 
+          rows="2" 
+          id="question"
+          [(ngModel)]="currentQuestion"
+          #questionInput></textarea>
+        <button 
+          (click)="onQuestionAsked()" 
+          class="btn btn-success">Submit</button>
+      </form>
+    </div>
+
+  </div>
+</div>

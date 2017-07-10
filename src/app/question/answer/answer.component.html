@@ -1,0 +1,23 @@
+
+<li
+  *ngFor="let answer of answers; let i = index" 
+  class="list-group-item">
+    {{ answer }}
+</li>
+
+<li class="list-group-item">
+  <form>
+    <label for="answer-input">Post an answer:</label>
+    <input 
+      id="answer-input"
+      name="answer-input" 
+      class="form-control" 
+      type="text" 
+      [(ngModel)]="currentAnswer">
+    <button 
+      class="btn btn-info"
+      (click)="onAnswerSubmit($event)">
+      Answer
+    </button>
+  </form>
+</li>

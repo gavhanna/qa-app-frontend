@@ -1,0 +1,12 @@
+
+<app-header></app-header>
+<div id="wrapper" class="container-fluid">
+  <app-ask-question (emitQuestion)="onReceiveQuestion($event)"></app-ask-question>
+{{ recievedQuestion }}
+  <app-question
+    (emitAnswer)="onReceiveAnswer($event)"
+    *ngFor="let questionEl of questions"
+    [question]="questionEl"
+  ></app-question>
+
+</div>
