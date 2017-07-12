@@ -75,7 +75,7 @@ nav {
 
 .navigation {
   > a {
-    border-radius: 50%;
+    border-radius: 2px;
     display: flex;
     cursor: pointer;
     flex-direction: column;
@@ -121,6 +121,14 @@ nav {
   padding: 0 10px;
 }
 
+.question-body {
+  background: skyblue;
+  color: #333;
+  padding: 10px;
+  margin: 10px 0px;
+  border-radius: 5px;
+}
+
 
 .question-container {
   max-width: 700px;
@@ -140,7 +148,6 @@ nav {
 
 .answer {
   padding: 10px;
-  
 }
 
 .answer-container {
@@ -151,7 +158,10 @@ nav {
 }
 
 .answer-list-item {
-  margin:0px 5px;
+  margin:0px 5px 5px 5px;
+  background: skyblue;
+  color: #333;
+  border-radius: 5px;
 }
 
 .answer-input > form {
