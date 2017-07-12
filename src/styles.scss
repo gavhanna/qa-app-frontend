@@ -1,0 +1,172 @@
+/* You can add global styles to this file, and also import other style files */
+
+$main-color: #00adef;
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1em;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #333;
+  background: $main-color;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+textarea, input {
+  padding: 10px;
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-radius: 5px;
+}
+
+button {
+  border: none;
+  color: #666;
+  width: 100px;
+  margin: 5px auto;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.main-title {
+  font-family: 'Comfortaa';
+  font-weight: lighter;
+  font-size: 3rem;
+}
+
+nav {
+  background: $main-color;
+  color: white;
+  position: fixed;
+  width: 100vw;
+  height: 44px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  .navbar {
+    padding: 10px;
+    margin: 0px 10px;
+    display: flex;
+    .title {
+      padding-right: 10px;
+    }
+    .navigation {
+      display: flex;
+      > a {
+        padding: 10px;
+        //box-shadow: 0 5px 0 0 #bbb;
+      }
+    }
+  }
+}
+
+.navigation {
+  > a {
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    transition: all .2s ease-in-out;
+    &:hover {
+      box-shadow: inset 0 30px 0 0 white; 
+      color: $main-color;
+    }
+  }
+}
+
+#wrapper {
+  padding-top: 94px;
+  width: 98%;
+  margin: 0 auto;
+}
+
+.ask-question-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 2px;
+  padding: 10px;
+  text-align: center;
+  form {
+    display: flex;
+    flex-direction: column;
+    > label {
+      margin-top: 10px;
+    }
+    > input, textarea {
+      margin-top: 5px;
+      box-shadow: inset 0px -2px 0px 0px skyblue,
+                  inset 2px 0px 0px 0px skyblue;
+      &:focus {
+
+      }
+    }
+  }
+}
+
+#username {
+  padding: 0 10px;
+}
+
+
+.question-container {
+  max-width: 700px;
+  border-radius: 5px;
+  background: darken($main-color, 10%);
+  margin: 50px auto;
+  padding: 20px;
+  box-shadow: inset 1px 0px 0px 0px darken($main-color, 5%),
+              inset -1px 0px 0px 0px darken($main-color, 5%),
+              inset 0px 1px 0px 0px darken($main-color, 5%),
+              1px 5px 5px 0px darken($main-color, 20%);
+}
+
+.posted-at {
+  text-align: right;
+}
+
+.answer {
+  padding: 10px;
+  
+}
+
+.answer-container {
+  box-shadow: -1px 0px 0px 0px $main-color;
+  > .answer-list-item {
+    padding: 10px 10px;
+  }
+}
+
+.answer-list-item {
+  margin:0px 5px;
+}
+
+.answer-input > form {
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: column;
+} 
+
+.answer-username, .answer-posted-at {
+  margin: 0px 0px;
+  padding: 0px;
+}
+
+
+.posted-at {
+  margin: 0px;
+  padding: 0px;
+}

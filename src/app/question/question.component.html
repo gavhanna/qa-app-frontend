@@ -1,41 +1,30 @@
-<div class="row">
-  <div class="col-xs-12 col-md-8 col-md-offset-2">
-    <!--Question-->
-    <div
-      class="panel panel-default panel-primary">      
-      <div class="panel-heading">
+  <div class="question-container">
+    <div class="question">
+      <div class="question-heading">
         Question
       </div>
-      <div class="panel-body">
-        <h4>{{ question.username }}</h4>
+      <div class="question-body">
+        <h4>{{ question.username }} asks</h4>
         <h3>
           {{ question.question }}
         </h3>
-        <small>Question id (for testing purposes):{{ question.id }}</small>
-        <hr>
-        <p class="pull-right">
+        <p class="posted-at">
           <small><em>
             Posted at: {{ question.postedAt.toString().slice(0, 25) }}
           </em></small>
         </p>
       </div>
+
+    </div>
+
       <!--Answers-->
-      <div class="row">
-        <div class="col-xs-10 col-xs-offset-1">
-          <div class="panel panel-default panel-info">
-            <div class="panel-heading">Answers</div>
-              <ul class="list-group">
-                <app-answer
-                  (emitAnswer)="onReceiveAnswer($event)"
-                  [answers]="question.answers">
-                </app-answer>
-              </ul>
+      <div class="answer">
+        <div class="answer-heading">Answers</div>
+          <div class="answer-list">
+            <app-answer
+              (emitAnswer)="onReceiveAnswer($event)"
+              [answers]="question.answers">
+            </app-answer>
           </div>
-        </div>
-      </div> <!-- panel-default -->
-    </div> <!-- panel-default -->
-  </div> <!-- col-xs-12 -->
-</div> <!-- row -->
-
-
-
+      </div>
+  </div>

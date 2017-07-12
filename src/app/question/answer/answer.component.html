@@ -1,11 +1,20 @@
+<div class="answer-container">
+  <div
+    *ngFor="let answer of answers; let i = index" 
+    class="answer-list-item">
+      <p class="answer-username"><strong>Username says</strong></p>
+      <p>
+        {{ answer }}
+      </p>
+      <p class="answer-posted-at posted-at">
+          <small><em>
+            Posted at:
+          </em></small>
+        </p>
+  </div>
+</div>
 
-<li
-  *ngFor="let answer of answers; let i = index" 
-  class="list-group-item">
-    {{ answer }}
-</li>
-
-<li class="list-group-item">
+<div class="answer-input">
   <form>
     <label for="answer-input">Post an answer:</label>
     <input 
@@ -20,4 +29,4 @@
       Answer
     </button>
   </form>
-</li>
+</div>

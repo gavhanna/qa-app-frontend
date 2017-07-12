@@ -1,6 +1,5 @@
-
 <app-header></app-header>
-<div id="wrapper" class="container-fluid">
+<div id="wrapper">
   <app-ask-question (emitQuestion)="onReceiveQuestion($event)"></app-ask-question>
   <app-question
     (emitAnswer)="onReceiveAnswer($event)"
