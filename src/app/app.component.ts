@@ -58,7 +58,6 @@ export class AppComponent {
     ).subscribe(
       (data) => {
         returnedAnswer = JSON.parse(data['_body']);
-        console.log(returnedAnswer);
         this.questions.forEach(function(question) {
           if (question['_id'] === returnedAnswer._id) {
             question.answers = returnedAnswer.answers;
