@@ -11,8 +11,8 @@ import 'rxjs/Rx';
 })
 export class AppComponent {
 
-  // private url = 'https://damp-falls-41014.herokuapp.com/questions';
-  private url = 'http://127.0.0.1:3000/questions';
+  private url = 'https://damp-falls-41014.herokuapp.com/questions';
+  //private url = 'http://127.0.0.1:3000/questions';
   questions: Question[];
 
   constructor(private http: Http) {
@@ -40,12 +40,12 @@ export class AppComponent {
     const self = this;
     let ans: string;
     let qId: string;
+    let returnedAnswer;
 
     this.questions.forEach(function(question) {
       if (question['_id'] === answer.questionId) {
         ans = answer.answer;
         qId = answer.questionId;
-        question.answers.unshift({'text': ans})
       }
     })
 
@@ -56,7 +56,15 @@ export class AppComponent {
       JSON.stringify({'text': ans}),
       options
     ).subscribe(
-      () => {},
+      (data) => {
+        returnedAnswer = JSON.parse(data['_body']);
+        console.log(returnedAnswer);
+        this.questions.forEach(function(question) {
+          if (question['_id'] === returnedAnswer._id) {
+            question.answers = returnedAnswer.answers;
+          }
+        })
+      },
       err => console.error(err)
     )
   }
@@ -64,24 +72,17 @@ export class AppComponent {
   sendQuestion(question: string) {
     const headers = new Headers({ 'Content-Type': 'application/json'});
     const options = new RequestOptions({ headers: headers });
+    const returnedQuestion = {};
     this.http.post(
       this.url,
       JSON.stringify({'text': question}),
       options
     ).subscribe(
-      () => {},
+      (data) => {
+        this.questions.unshift(JSON.parse(data['_body']))
+      },
       err => console.error(err)
     )
-    this.questions.unshift(
-      new Question(
-        [],
-        new Date().toString(),
-        question,
-        0,
-        ''
-      )
-    )
-    location.reload();
   }
 
 
