@@ -2,14 +2,14 @@
   <div
     *ngFor="let answer of answers; let i = index" 
     class="answer-list-item">
-      <p class="answer-username"><strong>Username says</strong></p>
+      <!-- <p class="answer-username"><strong>Username says</strong></p> -->
       <p>
-        {{ answer }}
+        {{ answer.text }}
       </p>
       <p class="answer-posted-at posted-at">
-          <small><em>
-            Posted at:
-          </em></small>
+          <!-- <small><em>
+            Posted at: {{ answer.createdAt.slice(0, 10) }}
+          </em></small> -->
         </p>
   </div>
 </div>

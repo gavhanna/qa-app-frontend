@@ -10,6 +10,7 @@ export class AnswerComponent implements OnInit {
   currentAnswer: string;
 
   @Input() answers: string[];
+  @Input() questionId: string;
 
   @Output() emitAnswer = new EventEmitter<any>();
 
@@ -19,7 +20,7 @@ export class AnswerComponent implements OnInit {
   }
 
   onAnswerSubmit(event) {
-    console.log(this.currentAnswer);
+    //console.log(this.currentAnswer);
     this.emitAnswer.emit(this.currentAnswer);
     this.currentAnswer = '';
   }

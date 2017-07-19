@@ -4,13 +4,13 @@
         Question
       </div>
       <div class="question-body">
-        <h4>{{ question.username }} asks</h4>
+        <!-- <h4>{{ question.username }} asks</h4> -->
         <h3>
-          {{ question.question }}
+          {{ question.text }}
         </h3>
         <p class="posted-at">
           <small><em>
-            Posted at: {{ question.postedAt.toString().slice(0, 25) }}
+            Posted at: {{ question.createdAt.slice(0, 10) }}
           </em></small>
         </p>
       </div>
@@ -23,7 +23,8 @@
           <div class="answer-list">
             <app-answer
               (emitAnswer)="onReceiveAnswer($event)"
-              [answers]="question.answers">
+              [answers]="question.answers"
+              >
             </app-answer>
           </div>
       </div>

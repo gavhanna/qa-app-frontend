@@ -8,19 +8,12 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class AskQuestionComponent implements OnInit {
 
   currentQuestion = '';
-  currentUsername = '';
 
   @Output() emitQuestion = new EventEmitter<any>();
 
   onQuestionAsked() {
-    this.emitQuestion.emit(
-      {
-        'question': this.currentQuestion,
-        'username': this.currentUsername
-      }
-    );
+    this.emitQuestion.emit(this.currentQuestion);
     this.currentQuestion = '';
-    this.currentUsername = '';
   }
 
   constructor() { }

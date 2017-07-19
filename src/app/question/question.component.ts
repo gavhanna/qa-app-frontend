@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Question } from 'app/question.model';
 
-import { Question } from '../question.model';
+// import { Question } from '../question.model';
 
 @Component({
   selector: 'app-question',
@@ -22,8 +23,8 @@ export class QuestionComponent implements OnInit {
 
   onReceiveAnswer(answer) {
     this.sendAnswer = {
-      'questionId': this.question.id,
-      'answer': answer
+      'answer': answer,
+      'questionId': this.question['_id']
     };
     this.emitAnswer.emit(this.sendAnswer);
   }

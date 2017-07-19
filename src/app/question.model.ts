@@ -1,15 +1,23 @@
-export class Question {
-  public postedAt: Date;
-  public username: string;
-  public question: string;
-  public answers: string[];
-  public id: number;
 
-  constructor(postedAt: Date, username: string, question: string, answers: string[] ) {
-      this.postedAt = postedAt;
-      this.username = username;
-      this.question = question;
+
+export class Question {
+  public answers: {};
+  public createdAt: string;
+  public text: string;
+  public _v: number;
+  public _id: string;
+
+  constructor(
+    answers: {},
+    createdAt: string,
+    text: string,
+    _v: number,
+    _id: string
+  ) {
       this.answers = answers;
-      this.id = Math.random();
+      this.createdAt = createdAt;
+      this.text = text;
+      this._v = _v;
+      this._id = _id;
   }
 }
