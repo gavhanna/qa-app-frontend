@@ -72,13 +72,19 @@ export class AppComponent {
       () => {},
       err => console.error(err)
     )
+    this.questions.unshift(
+      new Question(
+        [],
+        new Date().toString(),
+        question,
+        0,
+        ''
+      )
+    )
+    location.reload();
   }
 
 
   OnInit() {
-  }
-
-  OnChanges() {
-    this.getQuestions();
   }
 }

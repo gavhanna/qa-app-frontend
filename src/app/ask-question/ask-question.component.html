@@ -17,10 +17,13 @@
           rows="2" 
           id="question"
           [(ngModel)]="currentQuestion"
+          (keyup.enter)="onQuestionAsked()" 
           #questionInput></textarea>
         <button 
-          (click)="onQuestionAsked()" 
-          class="btn btn-success">Ask</button>
+          (click)="onQuestionAsked()"
+          class="btn btn-success"
+          [disabled]="!currentQuestion"
+          >Ask</button>
       </form>
 </div>
 

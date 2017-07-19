@@ -25,7 +25,8 @@
       [(ngModel)]="currentAnswer">
     <button 
       class="btn btn-info"
-      (click)="onAnswerSubmit($event)">
+      (click)="onAnswerSubmit($event)"
+      [disabled]="!currentAnswer">
       Answer
     </button>
   </form>
