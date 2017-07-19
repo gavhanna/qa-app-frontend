@@ -1,14 +1,14 @@
 
 
 export class Question {
-  public answers: {};
+  public answers: [{}];
   public createdAt: string;
   public text: string;
   public _v: number;
   public _id: string;
 
   constructor(
-    answers: {},
+    answers: [{}],
     createdAt: string,
     text: string,
     _v: number,

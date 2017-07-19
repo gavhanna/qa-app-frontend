@@ -34,7 +34,6 @@ export class AppComponent {
 
   onReceiveQuestion(question: any) {
     this.sendQuestion(question);
-    this.getQuestions();
   }
 
   onReceiveAnswer(answer) {
@@ -46,8 +45,8 @@ export class AppComponent {
       if (question['_id'] === answer.questionId) {
         ans = answer.answer;
         qId = answer.questionId;
+        question.answers.unshift({'text': ans})
       }
-
     })
 
     const headers = new Headers({ 'Content-Type': 'application/json'});
@@ -62,11 +61,24 @@ export class AppComponent {
     )
   }
 
-  sendQuestion(question) {
-    return this.http.post(this.url, {text: question})
+  sendQuestion(question: string) {
+    const headers = new Headers({ 'Content-Type': 'application/json'});
+    const options = new RequestOptions({ headers: headers });
+    this.http.post(
+      this.url,
+      JSON.stringify({'text': question}),
+      options
+    ).subscribe(
+      () => {},
+      err => console.error(err)
+    )
   }
 
 
   OnInit() {
+  }
+
+  OnChanges() {
+    this.getQuestions();
   }
 }
