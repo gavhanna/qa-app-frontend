@@ -14,7 +14,15 @@ export class QuestionComponent implements OnInit {
   @Output() emitAnswer = new EventEmitter<any>();
 
   sendAnswer: any = {};
+  revealAnswers = false;
 
+  showAnswers() {
+    if (this.revealAnswers === false) {
+      this.revealAnswers = true;
+    } else {
+      this.revealAnswers = false;
+    }
+  }
 
   constructor() { }
 

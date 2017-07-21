@@ -1,13 +1,16 @@
   <div class="question-container">
-    <div class="question">
+    <div class="question"
+      (click)="showAnswers()">
       <div class="question-heading">
-        Question
+        <strong>
+          Question
+        </strong>
       </div>
       <div class="question-body">
         <!-- <h4>{{ question.username }} asks</h4> -->
-        <h3>
+        <p>
           {{ question.text }}
-        </h3>
+        </p>
         <p class="posted-at">
           <small><em>
             Posted at: {{ question.createdAt.slice(0, 10) }}
@@ -18,8 +21,13 @@
     </div>
 
       <!--Answers-->
-      <div class="answer">
-        <div class="answer-heading">Answers</div>
+      <div class="answer"
+        *ngIf="revealAnswers">
+        <div class="answer-heading">
+          <strong>
+            Answers
+          </strong>
+        </div>
           <div class="answer-list">
             <app-answer
               (emitAnswer)="onReceiveAnswer($event)"
