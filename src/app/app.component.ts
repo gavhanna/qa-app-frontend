@@ -12,7 +12,7 @@ import 'rxjs/Rx';
 export class AppComponent {
 
   private url = 'https://damp-falls-41014.herokuapp.com/questions';
-  //private url = 'http://127.0.0.1:3000/questions';
+  // private url = 'http://127.0.0.1:3000/questions';
   questions: Question[];
 
   constructor(private http: Http) {
@@ -37,7 +37,6 @@ export class AppComponent {
   }
 
   onReceiveAnswer(answer) {
-    const self = this;
     let ans: string;
     let qId: string;
     let returnedAnswer;
