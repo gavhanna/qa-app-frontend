@@ -67,6 +67,18 @@ export class AppComponent {
     )
   }
 
+
+  // TODO: finish this fucking method
+  onReceiveVote(vote: any) {
+    console.log(vote);
+    this.questions.forEach(function(question) {
+      if (question['_id'] === vote.questionId) {
+        console.log('ok');
+      }
+    })
+  }
+
+
   sendQuestion(question: string) {
     const headers = new Headers({ 'Content-Type': 'application/json'});
     const options = new RequestOptions({ headers: headers });

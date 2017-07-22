@@ -1,0 +1,17 @@
+ <div class="answer-input">
+  <form>
+    <label for="answer-input">Post an answer:</label>
+    <input 
+      id="answer-input"
+      name="answer-input" 
+      class="form-control" 
+      type="text" 
+      [(ngModel)]="currentAnswer">
+    <button 
+      class="answer-btn"
+      (click)="onAnswerSubmit($event)"
+      [disabled]="!currentAnswer">
+      Answer
+    </button>
+  </form>
+</div> 

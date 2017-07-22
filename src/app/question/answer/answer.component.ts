@@ -7,22 +7,22 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class AnswerComponent implements OnInit {
 
-  currentAnswer: string;
 
-  @Input() answers: string[];
+  @Input() answer: any;
   @Input() questionId: string;
 
-  @Output() emitAnswer = new EventEmitter<any>();
+  @Output() emitVote = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onAnswerSubmit(event) {
-    this.emitAnswer.emit(this.currentAnswer);
-    this.currentAnswer = '';
+  onReceiveVote(vote: string, ansId: string) {
+    this.emitVote.emit(vote);
+    console.log(ansId);
   }
+
 
   getDaysPassed(postedDate) {
     const oneDay = 24 * 60 * 60 * 1000;
@@ -43,7 +43,7 @@ export class AnswerComponent implements OnInit {
   getHours(hours: number) {
     if ((hours < 0.01)) {
       return 'Just now';
-    } else if(hours < 0.02) {
+    } else if (hours < 0.02) {
       return '1 minute ago';
     } else if (hours < 0.1) {
       return hours.toString().slice(3, 4) + ' minutes ago';

@@ -1,33 +1,20 @@
 <div class="answer-container">
   <div
-    *ngFor="let answer of answers; let i = index" 
     class="answer-list-item">
       <!-- <p class="answer-username"><strong>Username says</strong></p> -->
-      <p>
-        {{ answer.text }}
-      </p>
-      <p class="answer-posted-at posted-at">
-           <small><em>
+      <app-answer-voting-controls
+        [score]="answer.votes"
+        (emitVote)="onReceiveVote($event)"
+      ></app-answer-voting-controls>
+      <div class="answer-content">
+        <p>
+          {{ answer.text }}
+        </p>
+        <p class="answer-posted-at posted-at">
+            <small><em>
             {{ getDaysPassed(answer.createdAt) }}
           </em></small> 
         </p>
+      </div>
   </div>
-</div>
-
-<div class="answer-input">
-  <form>
-    <label for="answer-input">Post an answer:</label>
-    <input 
-      id="answer-input"
-      name="answer-input" 
-      class="form-control" 
-      type="text" 
-      [(ngModel)]="currentAnswer">
-    <button 
-      class="answer-btn"
-      (click)="onAnswerSubmit($event)"
-      [disabled]="!currentAnswer">
-      Answer
-    </button>
-  </form>
 </div>

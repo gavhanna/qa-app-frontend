@@ -1,0 +1,11 @@
+<div class="vote-container">
+  <div class="vote-controls">
+    <span class="vote-up" (click)="vote('up')">
+      <i class="material-icons">keyboard_arrow_up</i>
+    </span>
+    <span id="current-score"><small>{{ score }}</small></span>
+    <span class="vote-down" (click)="vote('down')">
+      <i class="material-icons">keyboard_arrow_down</i>
+    </span>
+  </div>
+</div>

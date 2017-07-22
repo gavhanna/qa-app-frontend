@@ -9,6 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { QuestionComponent } from './question/question.component';
 import { AskQuestionComponent } from './ask-question/ask-question.component';
 import { AnswerComponent } from './question/answer/answer.component';
+import { AnswerVotingControlsComponent } from './question/answer/answer-voting-controls/answer-voting-controls.component';
+import { AnswerInputComponent } from './question/answer-input/answer-input.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AnswerComponent } from './question/answer/answer.component';
     HeaderComponent,
     QuestionComponent,
     AskQuestionComponent,
-    AnswerComponent
+    AnswerComponent,
+    AnswerVotingControlsComponent,
+    AnswerInputComponent
   ],
   imports: [
     BrowserModule,

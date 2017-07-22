@@ -5,6 +5,7 @@
   </app-ask-question>
 
   <app-question
+    (emitVote)="onReceiveVote($event)"
     (emitAnswer)="onReceiveAnswer($event)"
     *ngFor="let questionEl of questions"
     [question]="questionEl"

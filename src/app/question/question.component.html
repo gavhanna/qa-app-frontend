@@ -33,10 +33,15 @@
         </div>
           <div class="answer-list">
             <app-answer
-              (emitAnswer)="onReceiveAnswer($event)"
-              [answers]="question.answers"
+              (emitVote)="onReceiveVote($event)"
+              
+              *ngFor="let answerEl of question.answers"
+              [answer]="answerEl"
               >
             </app-answer>
+              <app-answer-input
+                (emitAnswer)="onReceiveAnswer($event)"
+              ></app-answer-input>
           </div>
       </div>
   </div>

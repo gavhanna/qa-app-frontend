@@ -12,9 +12,10 @@ export class QuestionComponent implements OnInit {
 
   @Input() question: Question;
   @Output() emitAnswer = new EventEmitter<any>();
+  @Output() emitVote = new EventEmitter<any>();
 
   sendAnswer: any = {};
-  revealAnswers = false;
+  revealAnswers = true;
 
   showAnswers() {
     if (this.revealAnswers === false) {
@@ -36,6 +37,14 @@ export class QuestionComponent implements OnInit {
     };
     this.emitAnswer.emit(this.sendAnswer);
   }
+
+  onReceiveVote(vote: string) {
+    this.emitVote.emit({
+      'vote': vote,
+      'questionId': this.question['_id']
+    });
+  }
+
 
   getDaysPassed(postedDate) {
     const oneDay = 24 * 60 * 60 * 1000;

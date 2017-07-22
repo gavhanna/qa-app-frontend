@@ -166,6 +166,7 @@ nav {
 }
 
 .answer-list-item {
+  display: flex;
   padding: 10px 20px 0px 10px;
   margin: 5px;
   margin-left: 50px;
@@ -180,6 +181,7 @@ nav {
     box-shadow: -5px 0px 0px 0px #CD7F32;
   }
 }
+
 
 .answer-input {
   padding: 20px;
@@ -231,4 +233,52 @@ nav {
 
 .answer-container {
   transition: all .2s ease-in-out;
+}
+
+
+.answer-content {
+  width: 100%;
+  margin-left: 10px;
+}
+
+#current-score {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 5px auto;
+  padding: 0;
+}
+
+.vote-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .vote-controls {
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 1px 0px 0px 0px lighten($main-color, 40%),
+                  inset -1px 0px 0px 0px lighten($main-color, 40%),
+                  inset 0px 1px 0px 0px lighten($main-color, 40%),
+                  inset 0px -1px 0px 0px lighten($main-color, 40%);
+  }
+}
+
+.vote-up, .vote-down {
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  user-select: none;
+}
+
+.vote-up {
+  &:hover {
+    background: lightgreen;
+    color: white;
+  }
+}
+
+.vote-down {
+  &:hover {
+    background: lightsalmon;
+    color: white;
+  }
 }
