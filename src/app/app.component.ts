@@ -68,12 +68,28 @@ export class AppComponent {
   }
 
 
-  // TODO: finish this fucking method
   onReceiveVote(vote: any) {
-    console.log(vote);
+    const self = this;
     this.questions.forEach(function(question) {
       if (question['_id'] === vote.questionId) {
-        console.log('ok');
+        const headers = new Headers({ 'Content-Type': 'application/json'});
+        const options = new RequestOptions({ headers: headers });
+        self.http.post(
+          self.url + '/' + vote.questionId + '/answers/' + vote.vote.ansId + '/vote-' + vote.vote.vote,
+          JSON.stringify({'text': 'none'}),
+          options
+        ).subscribe(
+          (data) => {
+            console.log(data);
+            const returnedObject = JSON.parse(data['_body']);
+            self.questions.forEach(function(q) {
+              if (q['_id'] === vote.questionId) {
+                q.answers = returnedObject.answers;
+              }
+            })
+          },
+          err => console.error(err)
+        )
       }
     })
   }

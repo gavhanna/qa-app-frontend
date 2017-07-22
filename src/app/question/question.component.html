@@ -34,7 +34,6 @@
           <div class="answer-list">
             <app-answer
               (emitVote)="onReceiveVote($event)"
-              
               *ngFor="let answerEl of question.answers"
               [answer]="answerEl"
               >

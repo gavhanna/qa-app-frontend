@@ -18,9 +18,11 @@ export class AnswerComponent implements OnInit {
   ngOnInit() {
   }
 
-  onReceiveVote(vote: string, ansId: string) {
-    this.emitVote.emit(vote);
-    console.log(ansId);
+  onReceiveVote(vote: string) {
+    this.emitVote.emit({
+      'vote': vote,
+      'ansId': this.answer['_id']
+    });
   }
 
 

@@ -38,7 +38,7 @@ export class QuestionComponent implements OnInit {
     this.emitAnswer.emit(this.sendAnswer);
   }
 
-  onReceiveVote(vote: string) {
+  onReceiveVote(vote: any) {
     this.emitVote.emit({
       'vote': vote,
       'questionId': this.question['_id']
