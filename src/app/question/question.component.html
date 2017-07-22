@@ -13,7 +13,10 @@
         </p>
         <p class="posted-at">
           <small><em>
-            Posted at: {{ question.createdAt.slice(0, 10) }}
+            {{ getAnswerCount() }}
+          </em></small>
+          <small><em>
+            Posted {{ getDaysPassed(question.createdAt) }}
           </em></small>
         </p>
       </div>

@@ -1,6 +1,9 @@
 <app-header></app-header>
 <div id="wrapper">
-  <app-ask-question (emitQuestion)="onReceiveQuestion($event)"></app-ask-question>
+  <app-ask-question 
+    (emitQuestion)="onReceiveQuestion($event)">
+  </app-ask-question>
+
   <app-question
     (emitAnswer)="onReceiveAnswer($event)"
     *ngFor="let questionEl of questions"

@@ -8,7 +8,7 @@
       </p>
       <p class="answer-posted-at posted-at">
            <small><em>
-            Posted at: {{ answer.createdAt.slice(0, 10) }}
+            {{ getDaysPassed(answer.createdAt) }}
           </em></small> 
         </p>
   </div>
@@ -24,7 +24,7 @@
       type="text" 
       [(ngModel)]="currentAnswer">
     <button 
-      class="btn btn-info"
+      class="answer-btn"
       (click)="onAnswerSubmit($event)"
       [disabled]="!currentAnswer">
       Answer

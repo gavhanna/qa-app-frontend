@@ -37,4 +37,27 @@ export class QuestionComponent implements OnInit {
     this.emitAnswer.emit(this.sendAnswer);
   }
 
+  getDaysPassed(postedDate) {
+    const oneDay = 24 * 60 * 60 * 1000;
+    const firstDate = new Date(postedDate);
+    const secondDate = new Date();
+    const numOfDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay))); 
+
+    if (numOfDays === 0) {
+      return 'Today';
+    } else if (numOfDays === 1) {
+      return 'Yesterday';
+    } else {
+      return numOfDays + ' days ago';
+    }
+  }
+
+  getAnswerCount() {
+    if (this.question.answers.length === 1) {
+      return this.question.answers.length + ' answer';
+    } else {
+      return this.question.answers.length + ' answers';
+    }
+  }
+
 }

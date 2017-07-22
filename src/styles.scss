@@ -67,7 +67,6 @@ nav {
       display: flex;
       > a {
         padding: 10px;
-        //box-shadow: 0 5px 0 0 #bbb;
       }
     }
   }
@@ -110,9 +109,6 @@ nav {
       margin-top: 5px;
       box-shadow: inset 0px -2px 0px 0px skyblue,
                   inset 2px 0px 0px 0px skyblue;
-      &:focus {
-
-      }
     }
   }
 }
@@ -121,96 +117,58 @@ nav {
   padding: 0 10px;
 }
 
-// .question-body {
-//   background: skyblue;
-//   color: #333;
-//   padding: 10px;
-//   margin: 10px 0px;
-//   border-radius: 5px;
-// }
-
-
-// .question-container {
-//   max-width: 700px;
-//   border-radius: 5px;
-//   background: darken($main-color, 10%);
-//   margin: 50px auto;
-//   padding: 20px;
-//   box-shadow: inset 1px 0px 0px 0px darken($main-color, 5%),
-//               inset -1px 0px 0px 0px darken($main-color, 5%),
-//               inset 0px 1px 0px 0px darken($main-color, 5%),
-//               1px 5px 5px 0px darken($main-color, 20%);
-// }
-
-// .posted-at {
-//   text-align: right;
-// }
-
-// .answer {
-//   padding: 10px;
-// }
-
-// .answer-container {
-//   box-shadow: -1px 0px 0px 0px $main-color;
-//   > .answer-list-item {
-//     padding: 10px 10px;
-//   }
-// }
-
-// .answer-list-item {
-//   margin:0px 5px 5px 5px;
-//   background: skyblue;
-//   color: #333;
-//   border-radius: 5px;
-// }
-
 .answer-input > form {
   margin: 10px 0px;
   display: flex;
   flex-direction: column;
 } 
 
-// .answer-username, .answer-posted-at {
-//   margin: 0px 0px;
-//   padding: 0px;
-// }
-
-
-// .posted-at {
-//   margin: 0px;
-//   padding: 0px;
-// }
-
-
 .question-container {
+  background: pink;
   color: #444;
   background: white;
   max-width: 500px;
   margin: 50px auto;
-  padding: 20px;
+  padding: 0px;
   border-radius: 2px;
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  box-shadow: 0 9px 18px rgba(0,0,0,0.30), 0 5px 5px rgba(0,0,0,0.22);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
+#question {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.question {
+  padding: 20px;
+  cursor: pointer;
+}
 
 .posted-at {
-  text-align: right;
+  //text-align: right;
+  display: flex;
+  justify-content: space-between;
   margin-top: 0px;
   padding-top: 0px;
+}
+
+.answer-posted-at {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .question-container:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-.answer {
+.answer-heading {
   margin-left: 50px;
 }
 
 .answer-list-item {
-  padding: 10px 0px 0px 10px;
+  padding: 10px 20px 0px 10px;
   margin: 5px;
+  margin-left: 50px;
   box-shadow: -5px 0px 0px 0px $main-color;
   &:nth-child(1) {
     box-shadow: -5px 0px 0px 0px gold;
@@ -223,6 +181,54 @@ nav {
   }
 }
 
-.question {
-  cursor: pointer;
+.answer-input {
+  padding: 20px;
+  > form label {
+    margin-left: 20px;
+  }
+}
+
+#answer-input {
+  border: 1px solid $main-color;
+  margin: 0px 20px;
+}
+
+.ask-question-btn, .answer-btn  {
+  background: white;
+  color:#666;
+  transition: all .2s ease-in-out;
+  &:hover {
+    background: $main-color;
+    color:white;
+    box-shadow: inset 3px 0px 0px 0px white,
+                inset -3px 0px 0px 0px white,
+                inset 0px 3px 0px 0px white,
+                inset 0px -3px 0px 0px white;
+  }
+}
+
+.ask-question-btn {
+  box-shadow: 0 9px 18px rgba(0,0,0,0.30), 0 5px 5px rgba(0,0,0,0.22);
+  &:hover {
+    box-shadow: 0 9px 18px rgba(0,0,0,0.30), 0 5px 5px rgba(0,0,0,0.22);
+  }
+}
+
+.answer-btn {
+  background: $main-color;
+  color: white;
+  
+  
+  &:hover {
+    background: white;
+    color:$main-color;
+    box-shadow: inset 2px 0px 0px 0px $main-color,
+                inset -2px 0px 0px 0px $main-color,
+                inset 0px 2px 0px 0px $main-color,
+                inset 0px -2px 0px 0px $main-color;
+  }
+}
+
+.answer-container {
+  transition: all .2s ease-in-out;
 }
