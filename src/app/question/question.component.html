@@ -1,46 +1,48 @@
-  <div class="question-container">
-    <div class="question"
-      (click)="showAnswers()">
-      <div class="question-heading">
-        <strong>
-          Question
-        </strong>
-      </div>
-      <div class="question-body">
-        <!-- <h4>{{ question.username }} asks</h4> -->
-        <p>
-          {{ question.text }}
-        </p>
-        <p class="posted-at">
-          <small><em>
-            {{ getAnswerCount() }}
-          </em></small>
-          <small><em>
-            {{ getDaysPassed(question.createdAt) }}
-          </em></small>
-        </p>
-      </div>
-
+<div class="question-container">
+  <div class="question"
+    (click)="showAnswers()">
+    <div class="question-heading">
+      <strong>
+        Question
+      </strong>
+    </div>
+    <div class="question-body">
+      <!-- <h4>{{ question.username }} asks</h4> -->
+      <p>
+        {{ question.text }}
+      </p>
+      <p class="posted-at">
+        <small><em>
+          {{ getAnswerCount() }}
+        </em></small>
+        <small><em>
+          {{ getDaysPassed(question.createdAt) }}
+        </em></small>
+      </p>
     </div>
 
-      <!--Answers-->
-      <div class="answer"
-        *ngIf="revealAnswers">
-        <div class="answer-heading">
-          <strong>
-            Answers
-          </strong>
-        </div>
-          <div class="answer-list">
-            <app-answer
-              (emitVote)="onReceiveVote($event)"
-              *ngFor="let answerEl of question.answers"
-              [answer]="answerEl"
-              >
-            </app-answer>
-              <app-answer-input
-                (emitAnswer)="onReceiveAnswer($event)"
-              ></app-answer-input>
-          </div>
-      </div>
   </div>
+
+    <!--Answers-->
+    <div class="answer"
+      *ngIf="revealAnswers">
+      <div class="answer-heading">
+        <strong>
+          Answers
+        </strong>
+      </div>
+        <div class="answer-list">
+          <app-answer
+            class="ann-answer"
+            (emitVote)="onReceiveVote($event)"
+            *ngFor="let answerEl of question.answers; let i = index"
+            [answer]="answerEl"
+            [index]="i"
+            >
+          </app-answer>
+          <app-answer-input
+            (emitAnswer)="onReceiveAnswer($event)"
+          ></app-answer-input>
+        </div>
+    </div>
+</div>

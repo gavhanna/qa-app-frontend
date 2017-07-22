@@ -11,8 +11,8 @@ import 'rxjs/Rx';
 })
 export class AppComponent {
 
-  // private url = 'https://damp-falls-41014.herokuapp.com/questions';
-  private url = 'http://127.0.0.1:3000/questions';
+  private url = 'https://damp-falls-41014.herokuapp.com/questions';
+  // private url = 'http://127.0.0.1:3000/questions';
   questions: Question[];
 
   constructor(private http: Http) {
@@ -66,7 +66,6 @@ export class AppComponent {
       err => console.error(err)
     )
   }
-
 
   onReceiveVote(vote: any) {
     const self = this;

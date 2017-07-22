@@ -10,6 +10,7 @@ export class AnswerComponent implements OnInit {
 
   @Input() answer: any;
   @Input() questionId: string;
+  @Input() index: number;
 
   @Output() emitVote = new EventEmitter<any>();
 

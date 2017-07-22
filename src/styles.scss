@@ -99,6 +99,9 @@ nav {
   border-radius: 2px;
   padding: 10px;
   text-align: center;
+  @media screen and (max-width: 500px) {
+    max-width: 95%;
+  }
   form {
     display: flex;
     flex-direction: column;
@@ -133,6 +136,9 @@ nav {
   border-radius: 2px;
   box-shadow: 0 9px 18px rgba(0,0,0,0.30), 0 5px 5px rgba(0,0,0,0.22);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  @media screen and (max-width: 500px) {
+    max-width: 95%;
+  }
 }
 
 #question {
@@ -170,16 +176,18 @@ nav {
   padding: 10px 20px 0px 10px;
   margin: 5px;
   margin-left: 50px;
-  box-shadow: -5px 0px 0px 0px $main-color;
-  &:nth-child(1) {
-    box-shadow: -5px 0px 0px 0px gold;
-  }
-  &:nth-child(2) {
-    box-shadow: -5px 0px 0px 0px silver;
-  }
-  &:nth-child(3) {
-    box-shadow: -5px 0px 0px 0px #CD7F32;
-  }
+  box-shadow: inset 5px 0px 0px 0px $main-color;
+}
+
+.answer-list-0 {
+  box-shadow: inset 5px 0px 0px 0px gold;
+}
+.answer-list-1 {
+  box-shadow: inset 5px 0px 0px 0px silver;
+}
+
+.answer-list-2 {
+  box-shadow: inset 5px 0px 0px 0px #CD7F32;
 }
 
 
