@@ -53,6 +53,7 @@ export class QuestionComponent implements OnInit {
     const numOfDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
     const hours = Math.abs(secondDate.getTime() - firstDate.getTime()) / 36e5;
 
+
     if (numOfDays === 0) {
       return this.getHours(hours);
     } else if (numOfDays === 1) {
@@ -60,12 +61,13 @@ export class QuestionComponent implements OnInit {
     } else {
       return numOfDays + ' days ago';
     }
+
   }
 
   getHours(hours: number) {
     if ((hours < 0.01)) {
       return 'Just now';
-    } else if(hours < 0.02) {
+    } else if (hours < 0.02) {
       return '1 minute ago';
     } else if (hours < 0.1) {
       return hours.toString().slice(3, 4) + ' minutes ago';

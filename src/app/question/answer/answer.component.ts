@@ -52,9 +52,10 @@ export class AnswerComponent implements OnInit {
       return hours.toString().slice(3, 4) + ' minutes ago';
     } else if (hours < 0.6) {
       return hours.toString().slice(2, 4) + ' minutes ago';
+    } else if (hours < 1.2) {
+      return '1 hour ago';
     } else {
       return ((hours / 60) * 100).toString().slice(0, 1) + ' hours ago';
     }
   }
-
 }
