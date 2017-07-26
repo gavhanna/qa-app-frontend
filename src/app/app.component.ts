@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Question } from './question.model';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/Rx';
@@ -9,16 +9,20 @@ import 'rxjs/Rx';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  private url = 'https://damp-falls-41014.herokuapp.com/questions';
-  // private url = 'http://127.0.0.1:3000/questions';
+  // private url = 'https://damp-falls-41014.herokuapp.com/questions';
+  private url = 'http://127.0.0.1:3000/questions';
   questions: Question[];
 
   constructor(private http: Http) {
     console.log('Hello fellow user');
     this.getData();
     this.getQuestions();
+  }
+
+  ngOnInit(): void {
+    console.log('app initialised');
   }
 
   getData() {
