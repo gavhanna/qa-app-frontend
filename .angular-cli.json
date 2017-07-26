@@ -23,7 +23,6 @@
         "styles.scss"
       ],
       "scripts": [
-        "../js-scripts/scripts.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
